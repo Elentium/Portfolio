@@ -1,5 +1,6 @@
 {
     "Title": "VoidSentry",
     "Image": "assets/voidSentry.png",
-    "Link": "https://github.com/Elentium/VoidSentry"
+    "Link": "https://github.com/Elentium/VoidSentry",
+    "Description": "An efficient SerDes library."
 }

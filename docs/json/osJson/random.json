@@ -1,5 +1,6 @@
 {
     "Title": "Random",
     "Image": "assets/random.png",
-    "Link": "https://github.com/Elentium/Random"
+    "Link": "https://github.com/Elentium/Random",
+    "Description": "Random generation library."
 }

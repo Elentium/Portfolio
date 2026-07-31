@@ -1,5 +1,6 @@
 {
     "Title": "Wire",
     "Image": "assets/wire.png",
-    "Link": "https://github.com/Elentium/Wire"
+    "Link": "https://github.com/Elentium/Wire",
+    "Description": "A lightweight signal library."
 }

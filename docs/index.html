@@ -1,269 +1,270 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="no-js" data-theme="dark">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0d111b">
+    <meta name="description"
+        content="Elite is a full-stack Roblox scripter. Luau systems, gameplay features, and full game scripting.">
     <title>Elite | Roblox Scripter</title>
+    <meta property="og:title" content="Elite | Roblox Scripter">
+    <meta property="og:description" content="Full-stack Roblox scripter. Luau systems, gameplay, and game scripting.">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary">
     <link rel="shortcut icon" type="image/svg+xml" href="assets/favicon.svg">
     <link rel="stylesheet" href="css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
 </head>
-<body>
-    <div class="cursor-glow"></div>
 
-    <nav>
-        <div class="logo">
-            <svg class="logo-icon" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
-                <defs>
-                    <linearGradient id="iconGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                        <stop offset="0%" style="stop-color:#b794ff"/>
-                        <stop offset="100%" style="stop-color:#6c3ce0"/>
-                    </linearGradient>
-                    <filter id="glow">
-                        <feGaussianBlur stdDeviation="1.5" result="coloredBlur"/>
-                        <feMerge>
-                            <feMergeNode in="coloredBlur"/>
-                            <feMergeNode in="SourceGraphic"/>
-                        </feMerge>
-                    </filter>
-                </defs>
-                <g transform="rotate(-12 20 20)" filter="url(#glow)">
-                    <!-- Main square -->
-                    <rect x="4" y="4" width="32" height="32" rx="3" fill="#0c0a12" stroke="url(#iconGradient)" stroke-width="1.5"/>
-                    <!-- Roblox-style cutout -->
-                    <rect x="24" y="6" width="10" height="10" rx="1" fill="#0c0a12" stroke="url(#iconGradient)" stroke-width="1"/>
-                    <!-- Hex pattern lines -->
-                    <path d="M8 28 L14 22 L14 14 L20 10" stroke="url(#iconGradient)" stroke-width="1" fill="none" opacity="0.8"/>
-                    <path d="M10 34 L18 28 L26 28" stroke="url(#iconGradient)" stroke-width="1" fill="none" opacity="0.6"/>
-                    <path d="M28 20 L32 24 L32 32" stroke="url(#iconGradient)" stroke-width="1" fill="none" opacity="0.7"/>
-                    <path d="M6 18 L10 14 L10 8" stroke="url(#iconGradient)" stroke-width="1" fill="none" opacity="0.5"/>
-                    <!-- Hex nodes -->
-                    <circle cx="14" cy="22" r="1.5" fill="#9b6dff"/>
-                    <circle cx="18" cy="28" r="1.5" fill="#9b6dff"/>
-                    <circle cx="32" cy="24" r="1.5" fill="#9b6dff"/>
-                    <circle cx="10" cy="14" r="1.2" fill="#b794ff" opacity="0.7"/>
-                </g>
-            </svg>
-            ELITE<span>.</span>
-        </div>
-        <div class="nav-links">
+<body>
+    <div class="cursor-glow" aria-hidden="true"></div>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <nav aria-label="Primary navigation">
+        <a class="logo" href="#top" aria-label="Elite home">
+            <span class="logo-mark" aria-hidden="true">E</span>
+            <span>ELITE<span class="logo-dot">.</span></span>
+        </a>
+        <div class="nav-links" id="primary-menu">
             <a href="#about">About</a>
-            <a href="#why-me">Why me</a>
             <a href="#portfolio">Work</a>
-            <a href="#pricing">Pricing</a>
-            <a href="#delivery">Delivery</a>
-            <a href="#payment">Payment</a>
-            <a href="#status">Status</a>
-            <a href="#tos">Terms</a>
-            <a href="#contact">Contact</a>
+            <a href="#services">Services</a>
+            <a href="#process">Process</a>
+            <a href="#contact" class="nav-cta">Start a project</a>
+        </div>
+        <div class="nav-actions">
+            <button class="theme-toggle" type="button" aria-pressed="true" aria-label="Switch to light mode">
+                <span class="theme-toggle-icon" aria-hidden="true">☼</span>
+            </button>
+            <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-menu">
+                <span class="sr-only">Toggle navigation</span>
+                <span aria-hidden="true">Menu</span>
+            </button>
         </div>
     </nav>
 
-    <header>
-        <div class="hero-particles" aria-hidden="true"></div>
+    <header id="top">
         <div class="hero">
-            <h2>Full-Stack Roblox Scripter</h2>
-            <p class="tagline">High-efficiency Luau scripting powered by a low-level mindset — C/C++, Rust, and Assembly experience applied to Roblox development.</p>
-            
+            <p class="eyebrow">Full-stack Roblox development</p>
+            <h1>Roblox systems built to hold up.</h1>
+            <p class="tagline">I build advanced Roblox systems with robust frontend and backend architecture. The goal
+                is code that performs well, stays organized, and is ready for continued development.</p>
+            <div class="hero-actions">
+                <a class="btn btn-primary" href="#contact">Start a project</a>
+                <a class="text-link" href="#portfolio">See my work <span aria-hidden="true">↓</span></a>
+            </div>
+            <div class="hero-status" aria-label="Current availability">
+                <span class="status-dot" aria-hidden="true"></span>
+                <span id="hero-availability">Available for short-term commissions</span>
+            </div>
             <div class="skills-wrapper">
                 <div class="skill-group">
-                    <span class="skill-label">Tools I use</span>
+                    <span class="skill-label">Workflow</span>
                     <div id="tools-container" class="tech-stack"></div>
                 </div>
                 <div class="skill-group">
-                    <span class="skill-label">Languages I know</span>
+                    <span class="skill-label">Languages</span>
                     <div id="languages-container" class="tech-stack"></div>
                 </div>
             </div>
         </div>
     </header>
 
-    <section id="about" class="section">
-        <h3 class="section-title">01 — About Me</h3>
-        <div class="glass-card">
-            <p>I am an experienced Full-Stack Roblox Scripter with 3 years of experience. I offer fast-delivery & high quality assets to bring your game to life. Having contributed to a lot of projects, I am optimized for both short and long-term scaling. I can do anything from UI scripting to complex gun/combat systems & full game scripting.</p>
-            <div class="about-footer">
-                <span><strong>Timezone:</strong> GMT +5</span>
-                <span><strong>Responsiveness:</strong> 13:00 - 22:00 GMT +5</span>
+    <main id="main-content">
+        <section id="about" class="section section-intro">
+            <div class="section-heading">
+                <p class="eyebrow">01 / About</p>
+                <h2>About</h2>
             </div>
-        </div>
-    </section>
-
-    <section id="why-me" class="section">
-        <h3 class="section-title">02 — Why choose me</h3>
-        <div class="tos-grid">
-            <div class="glass-card tos-item">
-                <h4>Shipped with pros</h4>
-                <p>I’ve spent a lot of time working <strong>with professional developers</strong> on <strong>real games</strong> — production-style collaboration, not one-off scripts in a vacuum. That experience shows in how I structure systems, communicate, and deliver.</p>
-            </div>
-            <div class="glass-card tos-item">
-                <h4>Deep Luau &amp; Roblox engine knowledge</h4>
-                <p>Strong command of <strong>Luau and the Roblox engine</strong>: <strong>full strict typing</strong> where it matters, <strong>best-practice</strong> patterns, and when performance is critical — <strong>bytecode-level</strong> thinking and optimizations.</p>
-            </div>
-            <div class="glass-card tos-item">
-                <h4>Reliable &amp; trustworthy</h4>
-                <p>I’m straightforward about scope and timelines, I follow through on what we agree, and I treat your project with respect. You get <strong>dependable delivery</strong> and honest communication — not hype.</p>
-            </div>
-            <div class="glass-card tos-item">
-                <h4>Industry-standard tooling</h4>
-                <p><strong>Using industry-standard tools to improve productivity</strong> — version control, profiling, and a solid Roblox/Luau workflow — so delivery stays fast, consistent, and maintainable.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="portfolio" class="section">
-        <h3 class="section-title">03 — Portfolio</h3>
-        <p class="portfolio-note">
-            Note: I rarely record my work (mostly when I get specific system implementation task), so there aren't a lot of examples.
-        </p>
-        <div class="tabs">
-            <button class="tab-btn active" data-tab="videos" type="button">Video Showcases</button>
-            <button class="tab-btn" data-tab="opensource" type="button">My Open Source Projects</button>
-        </div>
-        <div id="video-grid" class="grid active-tab"></div>
-        <div id="os-grid" class="grid"></div>
-        <div id="show-all-wrap" class="show-all-wrap">
-            <button id="show-all-btn" class="btn show-all-btn" type="button">Show all videos</button>
-        </div>
-    </section>
-
-    <section id="pricing" class="section">
-        <h3 class="section-title">04 — Pricing</h3>
-        <div class="pricing-container" id="pricing-grid"></div>
-        <p class="pricing-note">* Revenue share only if the game is already released and earning consistently.</p>
-    </section>
-
-    <section id="delivery" class="section">
-        <h3 class="section-title">05 — Delivery Times</h3>
-        <div class="delivery-container">
-            <div class="glass-card delivery-item">
-                <div class="delivery-header">
-                    <h4>Per-Task Commissions</h4>
-                    <span class="delivery-time">1–5 Days</span>
+            <div class="about-layout">
+                <p class="lead">I am a full-stack Roblox scripter with almost 4 years of experience. I build advanced
+                    systems with professional, robust frontend and backend architecture. Every commission is structured
+                    for performance, maintainability, and long-term use.</p>
+                <div class="detail-list">
+                    <div><span>Timezone</span><strong>GMT +8</strong></div>
+                    <div><span>Working hours</span><strong>13:00 to 21:00 GMT +8</strong></div>
+                    <div><span>Services</span><strong>Systems, gameplay, and full game scripting</strong></div>
                 </div>
-                <p>Turnaround varies based on task complexity and my current workload.</p>
             </div>
-            <div class="glass-card delivery-item">
-                <div class="delivery-header">
-                    <h4>Full Game Development</h4>
-                    <span class="delivery-time">5–30+ Days</span>
-                </div>
-                <p>Timeline depends on project scope, feature complexity, and availability.</p>
-            </div>
-        </div>
-        <div class="glass-card priority-option">
-            <div class="priority-badge">Priority Option</div>
-            <p>Need faster delivery? Add <strong>15–30%</strong> to your commission total and I'll prioritize your project accordingly. The exact premium depends on how much faster you need it completed.</p>
-        </div>
-    </section>
+        </section>
 
-    <section id="payment" class="section">
-        <h3 class="section-title">06 — Payment Options</h3>
-        <div class="payment-grid">
-            <div class="glass-card payment-method">
-                <div class="payment-header">
-                    <span class="payment-icon">Robux(devex rate)</span>
-                </div>
-                <ul>
-                    <li>Gamepass or Group Payout</li>
-                    <li><strong>Important:</strong> All Roblox taxes must be covered</li>
-                </ul>
+        <section class="section capabilities">
+            <div class="section-heading">
+                <p class="eyebrow">02 / How I work</p>
+                <h2>How I approach the work</h2>
             </div>
-            <div class="glass-card payment-method">
-                <div class="payment-header">
-                    <span class="payment-icon">USD ($)</span>
-                </div>
-                <ul>
-                    <li>Wise, Remitly, bank transfer, or wire — I accept common USD routes; <strong>fast-settlement methods</strong> (e.g. Wise, Remitly, instant or same-day bank options where available) are strongly preferred so funds actually reach me quickly.</li>
-                    <li>All transfer fees must be covered by you</li>
-                </ul>
+            <div class="feature-grid">
+                <article class="surface-card feature-card">
+                    <span class="feature-number">01</span>
+                    <h3>Structured delivery</h3>
+                    <p>Clear scope, agreed milestones, and regular progress updates keep the work predictable from the
+                        first brief to handoff.</p>
+                </article>
+                <article class="surface-card feature-card">
+                    <span class="feature-number">02</span>
+                    <h3>Technical depth</h3>
+                    <p>Strong Luau and Roblox engine knowledge, with strict typing and profiling used where they add
+                        real value.</p>
+                </article>
+                <article class="surface-card feature-card">
+                    <span class="feature-number">03</span>
+                    <h3>Maintainable workflow</h3>
+                    <p>Rojo, Git, Wally, and disciplined project structure make collaboration and future changes easier.
+                    </p>
+                </article>
             </div>
-        </div>
-        <div class="glass-card payment-restriction">
-            <p><strong>Strictly Restricted:</strong> I do <u>not</u> accept Crypto or PayPal (PayPal is unavailable in my region).</p>
-        </div>
-    </section>
+        </section>
 
-    <section id="status" class="section">
-        <h3 class="section-title">07 — Availability</h3>
-        <div class="status-container">
-            <div class="status-card">
-                <span>Short-term availability</span>
-                <span id="short-term-status" class="status-indicator"></span>
+        <section id="portfolio" class="section">
+            <div class="section-heading section-heading-row">
+                <div>
+                    <p class="eyebrow">03 / Selected work</p>
+                    <h2>Work</h2>
+                </div>
+                <p class="section-copy">A selection of gameplay systems, tooling, and open-source work.</p>
             </div>
-            <div class="status-card">
-                <span>Long-term availability</span>
-                <span id="long-term-status" class="status-indicator"></span>
+            <div class="tabs" role="tablist" aria-label="Portfolio categories">
+                <button id="videos-tab" class="tab-btn active" data-tab="videos" type="button" role="tab"
+                    aria-selected="true" aria-controls="video-grid">Video showcases</button>
+                <button id="opensource-tab" class="tab-btn" data-tab="opensource" type="button" role="tab"
+                    aria-selected="false" aria-controls="os-grid">Open-source projects</button>
             </div>
-            <div class="status-card">
-                <span>Online (Local Time)</span>
-                <span id="online-status" class="status-indicator"></span>
+            <div id="video-grid" class="grid active-tab" role="tabpanel" aria-labelledby="videos-tab"></div>
+            <div id="os-grid" class="grid" role="tabpanel" aria-labelledby="opensource-tab" hidden></div>
+            <div id="show-all-wrap" class="show-all-wrap">
+                <button id="show-all-btn" class="btn btn-secondary show-all-btn" type="button">View all
+                    showcases</button>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="tos" class="section">
-        <h3 class="section-title">08 — Terms of Service</h3>
-        <div class="tos-grid">
-            <div class="glass-card tos-item">
-                <h4>01. Requirements</h4>
-                <p>I need a clear 'to-do' list before I start. If you want to change things once I’ve started coding, we’ll treat those as new tasks with a new price.</p>
+        <section id="services" class="section section-muted">
+            <div class="section-heading section-heading-row">
+                <div>
+                    <p class="eyebrow">04 / Services</p>
+                    <h2>Services and pricing</h2>
+                </div>
+                <a class="text-link" href="#contact">Get a quote <span aria-hidden="true">→</span></a>
             </div>
-            <div class="glass-card tos-item">
-                <h4>02. Payment Policy</h4>
-                <p><strong>50% upfront, 50% on completion.</strong> The agreed price is final; you cover all taxes and transaction fees. I <strong>do not begin work</strong> until the upfront (50%) is paid <em>and</em> the money has been <strong>delivered and available to me</strong> (cleared/received — not merely “sent” or pending). That protects both of us: <strong>fast-delivery payment methods</strong> (Remitly, quick bank transfers) reduce delays and ambiguity about when work can start.</p>
+            <div class="services-overview">
+                <div class="services-list">
+                    <h3>What I can build</h3>
+                    <ul>
+                        <li>Advanced data store systems</li>
+                        <li>Performance-critical systems</li>
+                        <li>Modular systems using single-script architecture, OOP, or ECS</li>
+                        <li>Advanced FPS and combat systems</li>
+                        <li>Clean UI effects designed for responsive game feel</li>
+                        <li>Vehicle systems</li>
+                        <li>Robust, exploit-resistant backends</li>
+                    </ul>
+                </div>
+                <div class="services-list services-list-limited">
+                    <h3>What I do not take on</h3>
+                    <ul>
+                        <li>Systems built around extremely complex physics simulation loops</li>
+                    </ul>
+                </div>
             </div>
-            <div class="glass-card tos-item">
-                <h4>03. Refunds</h4>
-                <p>No cancellations once a commission is confirmed. Upfront payments are not refundable except where I am personally unable to complete the agreed work. If you default on the second payment or abandon the project per these terms, amounts already paid may be forfeited and work may be withheld as described under Ownership.</p>
+            <div class="services-layout">
+                <div class="pricing-container" id="pricing-grid"></div>
+                <aside class="service-aside surface-card">
+                    <p class="eyebrow">Delivery &amp; payment</p>
+                    <div class="delivery-item">
+                        <div>
+                            <h3>Feature commissions</h3>
+                            <p>Timing depends on scope, complexity, and current workload.</p>
+                        </div>
+                        <strong>1-5 days</strong>
+                    </div>
+                    <div class="delivery-item">
+                        <div>
+                            <h3>Full game development</h3>
+                            <p>Timeline is planned around the agreed feature set and review cycles.</p>
+                        </div>
+                        <strong>5-30+ days</strong>
+                    </div>
+                    <p class="aside-note">A 50% deposit confirms the commission. Transaction fees are covered by the client.</p>
+                </aside>
             </div>
-            <div class="glass-card tos-item">
-                <h4>04. Bug Fixes</h4>
-                <p>I fix my own bugs for free! Please report issues within 24 hours. After that, any problems are assumed to be from your own edits.</p>
+            <div class="subsection-heading payment-heading">
+                <h3>Payment methods</h3>
             </div>
-            <div class="glass-card tos-item">
-                <h4>05. Ownership &amp; License</h4>
-                <p>Once <strong>100% of the agreed price is paid and received</strong>, the commission is yours: you may use it in your game, resell or share it, or rework it — your call. Before that, I may hold the final handoff until the balance is paid; any previews or test builds we arrange are just for checking progress, not a substitute for payment. I may still show non-confidential work in my portfolio unless we agree otherwise. Please only send me assets or code you’re allowed to use.</p>
+            <div id="payment-methods" class="payment-methods-grid"></div>
+        </section>
+
+        <section id="process" class="section">
+            <div class="section-heading">
+                <p class="eyebrow">05 / Process &amp; terms</p>
+                <h2>Process &amp; terms</h2>
             </div>
-            <div class="glass-card tos-item">
-                <h4>06. Communication &amp; 72-hour inactivity</h4>
-                <p>Timely replies matter on <strong>both sides</strong>. If <strong>either of us</strong> does not respond for <strong>72 hours</strong>: while terms are still being discussed, the deal may be treated as <strong>abandoned</strong> (time-wasting risk). After a commission is <strong>confirmed</strong>, prolonged silence may indicate <strong>abandonment or bad faith</strong>; I may <strong>pause or stop work</strong>, require reconfirmation, or treat the arrangement according to Payment and Refunds. This clause exists to reduce fraud and wasted time — keep communication clear and prompt.</p>
+            <div id="tos" class="subsection-heading">
+                <h3>Terms of Service</h3>
             </div>
-            <div class="glass-card tos-item">
-                <h4>07. Scope changes &amp; disputes</h4>
-                <p>Requests outside the agreed scope are new work and may be quoted separately. If you dispute quality, you must report specific, reproducible issues in writing within the Bug Fixes window. These terms are the <strong>entire agreement</strong> for the commission unless we both sign something else. If one part is unenforceable, the rest still applies.</p>
+            <div id="tos-grid" class="tos-grid"></div>
+            <div id="tos-footer" class="tos-footer surface-card"></div>
+            <div class="subsection-heading">
+                <h3>Commission process</h3>
             </div>
-            <div class="glass-card tos-item">
-                <h4>08. Liability</h4>
-                <p>Work is provided <strong>“as is”</strong> to the maximum extent permitted by law. I am <strong>not liable</strong> for indirect, consequential, or lost-profit damages, or for issues caused by your changes, third-party assets, or Roblox/platform changes. My total liability for any claim relating to a commission is limited to <strong>fees you paid me for that specific commission</strong>. You agree to indemnify me against claims arising from content or instructions you provide.</p>
+            <div class="process-grid">
+                <article class="process-item"><span>01</span>
+                    <h3>Send a brief</h3>
+                    <p>Share the required system, references, budget, and target deadline.</p>
+                </article>
+                <article class="process-item"><span>02</span>
+                    <h3>Confirm the scope</h3>
+                    <p>We agree on deliverables, price, timeline, and the 50% deposit.</p>
+                </article>
+                <article class="process-item"><span>03</span>
+                    <h3>Development and review</h3>
+                    <p>I provide progress updates while the work is built and tested.</p>
+                </article>
+                <article class="process-item"><span>04</span>
+                    <h3>Final handoff</h3>
+                    <p>The completed work is delivered after the remaining balance is paid.</p>
+                </article>
             </div>
-        </div>
-        <div class="glass-card tos-footer">
-            <p><strong>Agreement:</strong> By commissioning me, you confirm you have read, understood, and accept these terms. No waiver of a term is valid unless in writing. These terms are here so both sides know what to expect from a Roblox commission.</p>
-        </div>
-    </section>
-    
-    <section id="contact" class="section">
-        <h3 class="section-title">09 — Contact</h3>
-        <div class="contact-links">
-            <div class="glass-card contact-notice">
-                <p class="notice-title"><strong>Important:</strong></p>
-                <ul>
-                    <li><strong>Include your project details</strong> in your first message. I ignore messages that only say "Hi" or "Are you open for commissions" without context.</li>
-                    <li>I don't give prices for <strong>vague requests</strong> like "rework the system and fix bugs." Price Scope varies wildly, "bugs" could mean one error or dozens of core issues. Without <strong>clear details</strong>, any price would be guesswork. For an <strong>accurate quote</strong>, provide: a clear description of the system, what needs changing, and known issues, or request a <strong>paid code review</strong> first.</li>
-                </ul>
+        </section>
+
+        <section id="contact" class="section contact-section">
+            <div class="contact-layout">
+                <div>
+                    <p class="eyebrow">06 / Contact</p>
+                    <h2>Contact</h2>
+                    <p class="lead">Include enough details for an accurate reply and quote.</p>
+                    <p class="contact-terms-note">By contacting me, you confirm that you have read and agree to the <a
+                            href="#tos">Terms of Service</a>.</p>
+                    <div class="links-actions">
+                        <a href="https://discord.com/users/1502950833220747325" class="btn btn-primary" target="_blank"
+                            rel="noopener noreferrer">Message on Discord</a>
+                        <a href="https://www.roblox.com/users/2046327171/profile" class="btn btn-secondary"
+                            target="_blank" rel="noopener noreferrer">Roblox profile</a>
+                    </div>
+                </div>
+                <aside class="contact-brief surface-card">
+                    <h3>Include the following:</h3>
+                    <ul>
+                        <li>A clear description of the required work</li>
+                        <li>References, screenshots, or relevant existing code</li>
+                        <li>Budget range and target deadline</li>
+                    </ul>
+                    <p>Detailed briefs receive the fastest and most accurate response.</p>
+                </aside>
             </div>
-            <div class="glass-card info-notice">
-                <p><strong>No response?</strong> If I haven't replied, it typically means your message lacked sufficient project details, or I'm currently unavailable or not interested in the project. Please don't take it personally.</p>
-            </div>
-            <div class="links-actions">
-                <a href="https://discord.com/users/1502950833220747325" class="btn" target="_blank">Discord</a>
-                <a href="https://www.roblox.com/users/2046327171/profile" class="btn" target="_blank">Roblox Profile</a>
-            </div>
-        </div>
-    </section>
+        </section>
+    </main>
+
+    <footer>
+        <a class="logo" href="#top" aria-label="Elite home"><span class="logo-mark"
+                aria-hidden="true">E</span><span>ELITE<span class="logo-dot">.</span></span></a>
+        <p>Elite | Roblox Scripter</p>
+        <a href="#top" class="text-link">Back to top ↑</a>
+    </footer>
 
     <script src="js/config.js"></script>
     <script type="module" src="js/main.js"></script>
 </body>
+
 </html>

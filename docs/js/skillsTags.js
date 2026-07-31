@@ -1,5 +1,5 @@
-const tools = ["VSCode/Cursor", "Rojo/Argon", "Wally/Pesde", "Rokit", "Git"];
-const languages = ["C", "C++", "Rust", "HTML/CSS", "JavaScript/TypeScript", "Lua", "Luau", "Python", "ARM + X86 Assembly"];
+const tools = ["VSCode/Cursor", "Rojo/Argon", "Wally/Pesde", "Rokit", "Git & Github"];
+const languages = ["C", "C++", "Rust", "HTML/CSS", "JavaScript/TypeScript", "Lua", "Luau", "Python", "Assembly(arm, x86, arm64, x64)"];
 
 function renderTags(list, containerId) {
     const container = document.getElementById(containerId);

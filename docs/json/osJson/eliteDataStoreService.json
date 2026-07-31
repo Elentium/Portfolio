@@ -1,5 +1,6 @@
 {
     "Title": "EliteDataStoreService",
     "Image": "assets/eliteDataStoreService.png",
-    "Link": "https://github.com/Elentium/EliteDataStoreService-REWORK-"
+    "Link": "https://github.com/Elentium/EliteDataStoreService-REWORK-",
+    "Description": "An Efficient DataStoreService wrapper."
 }

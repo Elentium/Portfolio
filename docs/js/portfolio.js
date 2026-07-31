@@ -1,13 +1,50 @@
 let videosExpanded = false;
 
-function buildVideoCard(data) {
-    const card = document.createElement('div');
-    card.className = 'glass-card video-card';
-    card.innerHTML = `
-        <video src="${data.Video}" controls preload="metadata"></video>
-        <h4>${data.Title}</h4>
-        <p>${data.Description}</p>`;
+function createPortfolioCard({ title, description, media, mediaType, link }) {
+    const card = document.createElement('article');
+    card.className = 'surface-card portfolio-card';
+
+    const mediaElement = document.createElement(mediaType === 'video' ? 'video' : 'img');
+    if (mediaType === 'video') {
+        mediaElement.src = media;
+        mediaElement.controls = true;
+        mediaElement.preload = 'metadata';
+        mediaElement.setAttribute('aria-label', `${title} video showcase`);
+    } else {
+        mediaElement.src = media;
+        mediaElement.alt = `${title} project preview`;
+        mediaElement.loading = 'lazy';
+    }
+
+    const content = document.createElement('div');
+    content.className = 'portfolio-content';
+    const heading = document.createElement('h3');
+    heading.textContent = title;
+    const copy = document.createElement('p');
+    copy.textContent = description;
+    content.append(heading, copy);
+
+    if (link) {
+        const action = document.createElement('a');
+        action.className = 'btn btn-secondary';
+        action.href = link;
+        action.target = '_blank';
+        action.rel = 'noopener noreferrer';
+        action.textContent = 'View source';
+        content.appendChild(action);
+    }
+
+    card.append(mediaElement, content);
     return card;
+}
+
+function buildVideoCard(data) {
+    return createPortfolioCard({
+        title: data.Title,
+        description: data.Description,
+        media: data.Video,
+        mediaType: 'video'
+    });
 }
 
 async function fetchVideo(fileName) {
@@ -30,18 +67,23 @@ function updateShowAllVisibility() {
     wrap.classList.toggle('is-visible', videosTabActive && !videosExpanded && hasMore);
 }
 
-function showTab(type) {
-    document.querySelectorAll('.grid').forEach(g => g.classList.remove('active-tab'));
-    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+function showTab(type, shouldFocus = false) {
+    const targetGrid = document.getElementById(type === 'videos' ? 'video-grid' : 'os-grid');
+    const targetButton = document.querySelector(`.tab-btn[data-tab="${type}"]`);
 
-    if (type === 'videos') {
-        document.getElementById('video-grid').classList.add('active-tab');
-        document.querySelector('.tab-btn[data-tab="videos"]')?.classList.add('active');
-    } else {
-        document.getElementById('os-grid').classList.add('active-tab');
-        document.querySelector('.tab-btn[data-tab="opensource"]')?.classList.add('active');
-    }
+    document.querySelectorAll('.grid').forEach(grid => {
+        const isSelected = grid === targetGrid;
+        grid.classList.toggle('active-tab', isSelected);
+        grid.hidden = !isSelected;
+    });
+    document.querySelectorAll('.tab-btn').forEach(button => {
+        const isSelected = button === targetButton;
+        button.classList.toggle('active', isSelected);
+        button.setAttribute('aria-selected', String(isSelected));
+        button.tabIndex = isSelected ? 0 : -1;
+    });
 
+    if (shouldFocus) targetButton?.focus();
     updateShowAllVisibility();
 }
 
@@ -94,14 +136,13 @@ async function loadOpenSource() {
         try {
             const response = await fetch(`json/osJson/${fileName}`);
             const data = await response.json();
-            const card = document.createElement('div');
-            card.className = 'glass-card';
-            card.innerHTML = `
-                <img src="${data.Image}" alt="${data.Title}">
-                <h4>${data.Title}</h4>
-                <p></p>
-                <a href="${data.Link}" target="_blank" class="btn">View Source</a>`;
-            osGrid.appendChild(card);
+            osGrid.appendChild(createPortfolioCard({
+                title: data.Title,
+                description: data.Description || 'Open source Roblox module.',
+                media: data.Image,
+                mediaType: 'image',
+                link: data.Link
+            }));
         } catch (e) {
             console.error("Error loading OS JSON:", e);
         }
@@ -109,8 +150,20 @@ async function loadOpenSource() {
 }
 
 function bindPortfolioControls() {
-    document.querySelectorAll('.tab-btn[data-tab]').forEach(btn => {
+    const tabs = [...document.querySelectorAll('.tab-btn[data-tab]')];
+    tabs.forEach((btn, index) => {
+        btn.tabIndex = index === 0 ? 0 : -1;
         btn.addEventListener('click', () => showTab(btn.dataset.tab));
+        btn.addEventListener('keydown', event => {
+            if (!['ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(event.key)) return;
+            event.preventDefault();
+            let nextIndex = index;
+            if (event.key === 'ArrowRight') nextIndex = (index + 1) % tabs.length;
+            if (event.key === 'ArrowLeft') nextIndex = (index - 1 + tabs.length) % tabs.length;
+            if (event.key === 'Home') nextIndex = 0;
+            if (event.key === 'End') nextIndex = tabs.length - 1;
+            showTab(tabs[nextIndex].dataset.tab, true);
+        });
     });
 
     document.getElementById('show-all-btn')?.addEventListener('click', showAllVideos);

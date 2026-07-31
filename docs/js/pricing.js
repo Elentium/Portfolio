@@ -1,10 +1,10 @@
 const pricingData = [
-    { name: "Per-Task Commissions", price: "$20+", desc: "Individual features" },
-    { name: "Simple Gameplay", price: "$150+", desc: "Basic game loops, e.g, obby/tycoon" },
-    { name: "Medium Gameplay", price: "$350+", desc: "Medium Difficulty Gameplay, e.g, platformer/racing/pet simulator" },
-    { name: "Complex Gameplay", price: "$900+", desc: "Complex Gameplay, e.g, combat/complex fps/open world/etc" },
-    { name: "Anticheat (S/M/C)", price: "$50 - $300+", desc: "Project dependent" },
-    { name: "Monetization", price: "$50 - $150+", desc: "Standard to Complex" }
+    { name: "Feature commissions", price: "$50+", desc: "Single systems or tasks" },
+    { name: "Simple gameplay", price: "$300+", desc: "Obbies, tycoons, basic loops" },
+    { name: "Medium gameplay", price: "$750+", desc: "Platformers, racing, pet sims" },
+    { name: "Complex gameplay", price: "$1500+", desc: "Combat, FPS, open world" },
+    { name: "Anticheat", price: "$100+", desc: "Depends on the game" },
+    { name: "Monetization", price: "$100+", desc: "Gamepasses, dev products, etc." }
 ];
 
 export function initPricing() {
@@ -12,13 +12,17 @@ export function initPricing() {
     if (!pGrid) return;
 
     pricingData.forEach(p => {
-        pGrid.innerHTML += `
-            <div class="pricing-card">
-                <div>
-                    <h4>${p.name}</h4>
-                    <p>${p.desc}</p>
-                </div>
-                <span>${p.price}</span>
-            </div>`;
+        const card = document.createElement('article');
+        card.className = 'pricing-card';
+        const content = document.createElement('div');
+        const heading = document.createElement('h3');
+        heading.textContent = p.name;
+        const description = document.createElement('p');
+        description.textContent = p.desc;
+        const price = document.createElement('span');
+        price.textContent = p.price;
+        content.append(heading, description);
+        card.append(content, price);
+        pGrid.appendChild(card);
     });
 }

@@ -1,22 +1,22 @@
 export function initAvailabilityStatus() {
-    const Availability = { shortTerm: true, longTerm: false };
+    const availability = { shortTerm: false, longTerm: false };
+    const heroAvailability = document.getElementById('hero-availability');
+    const statusDot = document.querySelector('.status-dot');
+    if (!heroAvailability || !statusDot) return;
 
-    const shortTermEl = document.getElementById('short-term-status');
-    const longTermEl = document.getElementById('long-term-status');
-    const onlineEl = document.getElementById('online-status');
-    if (!shortTermEl || !longTermEl || !onlineEl) return;
+    let textContent = "";
+    const isAvailable = availability.shortTerm || availability.longTerm;
 
-    shortTermEl.innerText = Availability.shortTerm ? "YES" : "NO";
-    shortTermEl.className = `status-indicator ${Availability.shortTerm ? 'yes' : 'no'}`;
+    if (availability.longTerm && availability.shortTerm) {
+        textContent = "Available for both short term and long term commissions.";
+    } else if (availability.shortTerm && !availability.longTerm) {
+        textContent = "Available for short term commissions only."
+    } else if (availability.longTerm && !availability.shortTerm) {
+        textContent = "Available for long term commissions only."
+    } else {
+        textContent = "Currently not accepting new commissions."
+    }
 
-    longTermEl.innerText = Availability.longTerm ? "YES" : "NO";
-    longTermEl.className = `status-indicator ${Availability.longTerm ? 'yes' : 'no'}`;
-
-    const now = new Date();
-    const utcHours = now.getUTCHours();
-    const gmt5Hours = (utcHours + 5) % 24;
-    const isOnline = gmt5Hours >= 13 && gmt5Hours < 22;
-
-    onlineEl.innerText = isOnline ? "YES" : "NO";
-    onlineEl.className = `status-indicator ${isOnline ? 'yes' : 'no'}`;
+    statusDot.classList.toggle('is-unavailable', !isAvailable);
+    heroAvailability.textContent = textContent;
 }

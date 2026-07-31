@@ -1,5 +1,6 @@
 {
     "Title": "PathfindingPlus",
     "Image": "assets/pathfindingPlus.png",
-    "Link": "https://github.com/Elentium/PathfindingPlus"
+    "Link": "https://github.com/Elentium/PathfindingPlus",
+    "Description": "Wrapper of PathfindingService with caching and avoiding heavy calculations where possible."
 }
